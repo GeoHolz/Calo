@@ -7,6 +7,6 @@ Calo is based entirely on the SB Admin project.
 
 ## Preview
 
-![Image of Calo](https://github.com/GeoHolz/Calo/media/img/Calo.png)
+![Image of Calo](https://raw.githubusercontent.com/GeoHolz/Calo/master/media/img/Calo.png)
 
 ## Download and Installation
