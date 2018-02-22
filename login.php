@@ -2,12 +2,13 @@
 session_start();
 include "config.php";
 $loginErr = "";
+// If logout Deleting session and session variables    
 if (isset($_GET['action']) AND $_GET['action']=="logout")
-{
-    // Suppression des variables de session et de la session    
+{ 
     $_SESSION = array();    
     session_destroy();    
 }
+// If Login 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
     //Connect to BDD
@@ -17,22 +18,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     catch(Exception $e){
         die('Erreur : '.$e->getMessage());
     }    
-    // Hachage du mot de passe
+    // Password hash
     
     $email=$_POST['email'];
     
-    // Vérification des identifiants
+    // Verification of credentials
     
     $req = $bdd->prepare('SELECT password,id,username FROM members WHERE email = :email');
     $req->execute(array('email' => $email));
     $resultat = $req->fetch();
+    // If not in the BDD
     if (!$resultat)
     {
-        $loginErr='Mauvais identifiant ou mot de passe !';
+        $loginErr='Wrong credentials';
 
     }
     else
     {
+        // If it is in the DBD and the password is correct
         if(password_verify($_POST['password'],$resultat[0]))
         {
             $_SESSION['id'] = $resultat['id'];
@@ -40,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             header('Location: index.php');  
         }
         else{
-            $loginErr='Mauvais identifiant ou mot de passe !';
+            $loginErr='Wrong credentials';
             }
     }
 }
@@ -55,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>SB Admin - Start Bootstrap Template</title>
+  <title>SB Admin - Calo version</title>
   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->

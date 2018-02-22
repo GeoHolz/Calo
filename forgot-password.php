@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>SB Admin - Start Bootstrap Template</title>
+  <title>SB Admin - Calo version</title>
   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -22,27 +22,23 @@
 include "config.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-
     //Connect to BDD
     try{
         $bdd = new PDO('mysql:host='.$MYSQL_HOST.';dbname='.$MYSQL_DB.';charset=utf8',$MYSQL_USER,$MYSQL_PASS);
     }
     catch(Exception $e){
         die('Erreur : '.$e->getMessage());
-    }    
-    
+    }     
     $email=$_POST['email'];
-    $username=$_POST['username'];
-    
-    // Vérification des identifiants
-    
+    $username=$_POST['username']; 
+    // Verification of credentials
     $req = $bdd->prepare('SELECT id FROM members WHERE email = :email AND username = :username');
     $req->execute(array('email' => $email, 'username' => $username));
     $resultat = $req->fetch();
     //If the username and email match, then we change the password.
     if ($resultat)
     {
-        // Generateb new password
+        // Generate new password
         $new_pass=randomPassword();
         $new_pass_hache = password_hash($new_pass, PASSWORD_DEFAULT);
         $req = $bdd->prepare('UPDATE `members` SET `password` = :password WHERE `id` = :id');

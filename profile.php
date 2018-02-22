@@ -10,7 +10,7 @@ catch(Exception $e){
      die('Erreur : '.$e->getMessage());
 }
 $id=$_SESSION['id'];
-//Test is email already exists
+//Retrieving User Information
 $query=$bdd->query("SELECT * FROM members WHERE id = '$id'");
 $user=$query->fetch();
 ?>
