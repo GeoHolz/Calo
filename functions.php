@@ -4,7 +4,7 @@ function isEmailAlreadyInDatabase( $email )
     $res = mysql_query( 'SELECT `id` FROM `user` WHERE `user_email` = \'' . mysql_real_escape_string( $email ) . '\' LIMIT 1' );
     return ( bool ) mysql_num_rows( $res );
 }  
-function test_input($data) {
+function purify_text($data) {
   $data = trim($data);
   $data = stripslashes($data);
   $data = htmlspecialchars($data);

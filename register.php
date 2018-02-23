@@ -30,11 +30,16 @@
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-6">
-                <label for="InputName">Username</label>
-                <input class="form-control" name="username" id="username" type="text" aria-describedby="nameHelp" placeholder="Enter Username">
+                <label for="InputName">First name</label>
+                <input class="form-control" name="firstname" id="firstname" type="text" aria-describedby="nameHelp" placeholder="Enter first name">
+                <small id="passwordHelp" class="text-danger"><?php echo $firstnameErr;?></small>
+              </div>
+              <div class="col-md-6">
+                <label for="InputName">Last name</label>
+                <input class="form-control" name="lastname" id="lastname" type="text" aria-describedby="nameHelp" placeholder="Enter last name">
+                <small id="passwordHelp" class="text-danger"><?php echo $lastnameErr;?></small>
               </div>
             </div>
-            <small id="passwordHelp" class="text-danger"><?php echo $usernameErr;?></small>
           </div>
           <div class="form-group">
             <label for="InputEmail1">Email address</label>

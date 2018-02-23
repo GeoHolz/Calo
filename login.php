@@ -20,12 +20,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     }    
     // Password hash
     
-    $email=$_POST['email'];
+    $post_email=$_POST['email'];
     
     // Verification of credentials
     
-    $req = $bdd->prepare('SELECT password,id,username FROM members WHERE email = :email');
-    $req->execute(array('email' => $email));
+    $req = $bdd->prepare('SELECT password,id,firstname,lastname FROM members WHERE email = :email');
+    $req->execute(array('email' => $post_email));
     $resultat = $req->fetch();
     // If not in the BDD
     if (!$resultat)
@@ -39,7 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         if(password_verify($_POST['password'],$resultat[0]))
         {
             $_SESSION['id'] = $resultat['id'];
-            $_SESSION['username'] = $resultat['username'];
+            $_SESSION['firstname'] = $resultat['firstname'];
+            $_SESSION['lastname'] = $resultat['lastname'];
             header('Location: index.php');  
         }
         else{

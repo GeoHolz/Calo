@@ -45,15 +45,22 @@ $user=$query->fetch();
 
 						<div class="col-xs-12 col-sm-9">
 							<h4 class="blue">
-								<span class="middle"><?php echo $_SESSION['username'];?></span>
+								<span class="middle"><?php echo $_SESSION['firstname']." ".$_SESSION['lastname'];?></span>
 							</h4>
 
 							<div class="profile-user-info">
 								<div class="profile-info-row">
-									<div class="profile-info-name"> Username </div>
+									<div class="profile-info-name"> Firstname </div>
 
 									<div class="profile-info-value">
-										<span><?php echo $_SESSION['username'];?></span>
+										<span><?php echo $_SESSION['firstname'];?></span>
+									</div>
+								</div>
+								<div class="profile-info-row">
+									<div class="profile-info-name"> Lastname </div>
+
+									<div class="profile-info-value">
+										<span><?php echo $_SESSION['lastname'];?></span>
 									</div>
 								</div>
 
