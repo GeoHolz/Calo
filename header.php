@@ -36,6 +36,8 @@ if(basename($_SERVER['PHP_SELF']) == "profile.php")
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
   <link href="css/userprofile.css" rel="stylesheet">
+  <!-- CSS file used for DataTables -->
+  <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
