@@ -3,7 +3,7 @@ session_start();
 // Test if the authentification is needed and redirect to login.php
 if($NEED_TO_LOG_FOR_ACCESS)
 {
-    if (!isset($_SESSION['id']) AND !isset($_SESSION['username']))
+    if (!isset($_SESSION['id']) AND !isset($_SESSION['firstname']))
     {
         header('Location: login.php');
     }
@@ -11,7 +11,7 @@ if($NEED_TO_LOG_FOR_ACCESS)
 // For profile.php, test if user is logged
 if(basename($_SERVER['PHP_SELF']) == "profile.php")
 {
-    if (!isset($_SESSION['id']) AND !isset($_SESSION['username'])){
+    if (!isset($_SESSION['id']) AND !isset($_SESSION['firstname'])){
         header('Location: login.php');  
     }
 
@@ -31,8 +31,6 @@ if(basename($_SERVER['PHP_SELF']) == "profile.php")
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <!-- Page level plugin CSS-->
-  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
   <link href="css/userprofile.css" rel="stylesheet">
