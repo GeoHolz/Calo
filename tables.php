@@ -65,3 +65,5 @@ $(document).ready(function() {
     } );
 } );
 </script>
+<!-- Scripts used for Datatables.net -->
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
