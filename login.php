@@ -86,7 +86,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
           <input type="submit" value="Login" class="btn btn-primary btn-block"/>
         </form>
         <div class="text-center">
+          <?php if($REGISTER_OPEN == true){ ?>
           <a class="d-block small mt-3" href="register.php">Register an Account</a>
+          <?php } ?>
           <a class="d-block small" href="forgot-password.php">Forgot Password?</a>
           <?php if($NEED_TO_LOG_FOR_ACCESS == false){ ?>
           <a class="d-block small" href="index.php">Visit web site as guest</a>

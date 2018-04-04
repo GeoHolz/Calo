@@ -19,7 +19,11 @@ catch(Exception $e){
         </li>
         <li class="breadcrumb-item active">Tables</li>
       </ol>
-      <!-- Example DataTables Card-->
+      <p>This Data Table use datatables.net .</p>
+      
+      <p>DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, build upon the foundations of progressive enhancement, that adds all of these advanced features to any HTML table.</p>
+      <p> This example use Server-side processing. The table is dynamically filled with a PHP function tables_response.php</p>
+     <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
           <i class="fa fa-table"></i> Data Table Example</div>
